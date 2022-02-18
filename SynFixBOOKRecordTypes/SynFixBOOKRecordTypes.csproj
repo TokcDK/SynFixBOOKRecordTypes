@@ -5,7 +5,7 @@
     <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Mutagen.Bethesda" Version="0.36.0-pr001" />
-    <PackageReference Include="Mutagen.Bethesda.Synthesis" Version="0.22.0-pr001" />
+    <PackageReference Include="Mutagen.Bethesda" Version="0.36.1-pr001" />
+    <PackageReference Include="Mutagen.Bethesda.Synthesis" Version="0.22.1" />
   </ItemGroup>
 </Project>
