@@ -1,8 +1,8 @@
 {
-  "Nickname": "SynFixBOOKRecordTypes-local",
+  "Nickname": "SynFixBOOKRecordTypes",
   "Visibility": "Visible",
   "OneLineDescription": "",
-  "LongDescription": "",
+  "LongDescription": "Syntesis version of patch. Fix book/note types depending on how it look. It will change Note to Book if it looks like Book and will change Book to Note if it looks loke Note.",
   "PreferredAutoVersioning": "Default",
   "RequiredMods": [],
   "TargetedReleases": []
