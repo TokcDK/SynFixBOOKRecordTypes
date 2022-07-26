@@ -21,14 +21,8 @@ namespace SynFixBOOKRecordTypes
             foreach (var bookGetter in state.LoadOrder.PriorityOrder.Book().WinningOverrides())
             {
                 var bookArt = bookGetter.InventoryArt;
-                if (bookArt == null || bookArt.IsNull)
-                {
-                    // ignore if bookart is null
-                    continue;
-                }
-
-                // try to get reference
-                if (!bookArt.TryResolve(linkCache, out var art)) continue;
+                if (bookArt == null || bookArt.IsNull) continue;// ignore if bookart is null
+                if (!bookArt.TryResolve(linkCache, out var art)) continue; // try to get reference
 
                 var bookArtString = art.EditorID + "";
                 var bookType = bookGetter.Type;
@@ -50,8 +44,11 @@ namespace SynFixBOOKRecordTypes
                     continue;
                 }
 
+
                 // set new data type value depending on art edid
-                state.PatchMod.Books.GetOrAddAsOverride(bookGetter).Type = isBook ? Book.BookType.BookOrTome : Book.BookType.NoteOrScroll;
+                var book = state.PatchMod.Books.GetOrAddAsOverride(bookGetter);
+                if (book.Description != null) book.Description = null;
+                book.Type = isBook ? Book.BookType.BookOrTome : Book.BookType.NoteOrScroll;
 
             }
         }
