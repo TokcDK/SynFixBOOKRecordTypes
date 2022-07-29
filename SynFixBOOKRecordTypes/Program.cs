@@ -47,7 +47,7 @@ namespace SynFixBOOKRecordTypes
 
                 // set new data type value depending on art edid
                 var book = state.PatchMod.Books.GetOrAddAsOverride(bookGetter);
-                if (book.Description != null) book.Description = null;
+                //if (book.Description != null) book.Description = null;
                 book.Type = isBook ? Book.BookType.BookOrTome : Book.BookType.NoteOrScroll;
 
             }
