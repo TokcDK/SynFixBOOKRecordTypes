@@ -32,23 +32,17 @@ namespace SynFixBOOKRecordTypes
                 if (isBook && bookType == Book.BookType.NoteOrScroll)
                 {
                     // book or journal record has data type of note
-                    // isBook = true;
+                    // isBook = true; already true
                 }
                 else if (!isBook && bookArtString.Contains("Note") && bookType == Book.BookType.BookOrTome)
                 {
                     // note record has data type of book
                     isBook = false;
                 }
-                else
-                {
-                    continue;
-                }
-
+                else continue;
 
                 // set new data type value depending on art edid
-                var book = state.PatchMod.Books.GetOrAddAsOverride(bookGetter);
-                //if (book.Description != null) book.Description = null;
-                book.Type = isBook ? Book.BookType.BookOrTome : Book.BookType.NoteOrScroll;
+                state.PatchMod.Books.GetOrAddAsOverride(bookGetter).Type = isBook ? Book.BookType.BookOrTome : Book.BookType.NoteOrScroll;
 
             }
         }
